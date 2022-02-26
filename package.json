@@ -23,6 +23,8 @@
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/wp-source": "^1.11.7",
     "frontity": "^1.17.2",
-    "grafikcentralen": "file:packages/grafikcentralen"
+    "grafikcentralen": "file:packages/grafikcentralen",
+    "react-in-viewport": "^1.0.0-alpha.20",
+    "react-on-screen": "^2.1.1"
   }
 }

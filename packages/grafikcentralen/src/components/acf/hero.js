@@ -4,12 +4,8 @@ import {styled, keyframes} from "frontity"
 import React, { useState, useEffect } from 'react';
 
 
-const Hero =({image, text, libraries, animation})=> {
+const Hero =({image, text, libraries, animation, isVisible })=> {
 
-    
-
-  
-    
     const Html = libraries.html2react.Component;
 
     const Image = styled.img`
@@ -26,23 +22,29 @@ const Hero =({image, text, libraries, animation})=> {
         display:block;
         position: relative;
     
-    }
+    
     `
 
     const slide = keyframes`
     0% {
-        left: 500px
+        opacity: 0;
+        left: -500px
     }
     100% {
+        opacity: 1;
         left: 0px;
     }
     `
 
     const Text = styled.div`
+    
+    opacity: 0;
         position: absolute;
         top: 170px;
-        animation: ${animation?slide:""};
-        animation-duration: 4s;
+        animation: ${isVisible?slide:""};
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
         color: white;
         h1 {
             background: black;
