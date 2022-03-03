@@ -3,6 +3,7 @@ import Hero from "./acf/hero";
 import Switch from "@frontity/components/switch"
 import TrackVisibility from 'react-on-screen';
 import { useEffect, useState } from "react";
+import LinkBlocks from "./acf/link_blocks";
 
 
 const Block = ({ isVisible , text, image }) => {
@@ -22,16 +23,20 @@ const Page =({state})=> {
     return (
 <>
      
-    
-
      {blocks.map((x,i)=> 
     <div key={i}>
-    
-        {x.acf_fc_layout === "hero"?  
+    {/* {x.acf_fc_layout} */}
+        {x.acf_fc_layout === "hero"
+        ?  
         <TrackVisibility offset={350}>
           <Block text={x.text} animation={true} image={x.image}/>
         </TrackVisibility>
-  : ""}
+        :
+        x.acf_fc_layout === "link_blocks"
+        ? <LinkBlocks title={x.title} text={x.text} blocks={x.blocks
+        }/>
+        : ""}
+
     
     </div>
 
