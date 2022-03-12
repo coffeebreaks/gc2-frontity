@@ -28,7 +28,7 @@ const Page =({state})=> {
     {/* {x.acf_fc_layout} */}
         {x.acf_fc_layout === "hero"
         ?  
-        <TrackVisibility offset={350}>
+        <TrackVaisibility offset={350}>
           <Block text={x.text} animation={true} image={x.image}/>
         </TrackVisibility>
         :
