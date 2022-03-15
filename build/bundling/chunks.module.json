@@ -1,20 +1,18 @@
 {
-  "errors": [
-    "./packages/grafikcentralen/src/components/page.js\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\webb\\gc2-frontity\\packages\\grafikcentralen\\src\\components\\page.js: Expected corresponding JSX closing tag for <TrackVaisibility>. (33:8)\n\n\u001b[0m \u001b[90m 31 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33mTrackVaisibility\u001b[39m offset\u001b[33m=\u001b[39m{\u001b[35m350\u001b[39m}\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mBlock\u001b[39m text\u001b[33m=\u001b[39m{x\u001b[33m.\u001b[39mtext} animation\u001b[33m=\u001b[39m{\u001b[36mtrue\u001b[39m} image\u001b[33m=\u001b[39m{x\u001b[33m.\u001b[39mimage}\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mTrackVisibility\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m         \u001b[33m:\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m         x\u001b[33m.\u001b[39macf_fc_layout \u001b[33m===\u001b[39m \u001b[32m\"link_blocks\"\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m         \u001b[33m?\u001b[39m \u001b[33m<\u001b[39m\u001b[33mLinkBlocks\u001b[39m title\u001b[33m=\u001b[39m{x\u001b[33m.\u001b[39mtitle} text\u001b[33m=\u001b[39m{x\u001b[33m.\u001b[39mtext} blocks\u001b[33m=\u001b[39m{x\u001b[33m.\u001b[39mblocks\u001b[0m\n    at Object._raise (C:\\webb\\gc2-frontity\\node_modules\\@babel\\parser\\src\\parser\\error.js:150:45)\n    at Object.raiseWithData (C:\\webb\\gc2-frontity\\node_modules\\@babel\\parser\\src\\parser\\error.js:145:17)\n    at Object.raise (C:\\webb\\gc2-frontity\\node_modules\\@babel\\parser\\src\\parser\\error.js:89:17)\n    at Object.jsxParseElementAt (C:\\webb\\gc2-frontity\\node_modules\\@babel\\parser\\src\\plugins\\jsx\\index.js:510:18)\n    at Object.jsxParseElement (C:\\webb\\gc2-frontity\\node_modules\\@babel\\parser\\src\\plugins\\jsx\\index.js:545:19)\n    at Object.parseExprAtom (C:\\webb\\gc2-frontity\\node_modules\\@babel\\parser\\src\\plugins\\jsx\\index.js:561:21)\n    at Object.parseExprSubscripts (C:\\webb\\gc2-frontity\\node_modules\\@babel\\parser\\src\\parser\\expression.js:682:23)\n    at Object.parseUpdate (C:\\webb\\gc2-frontity\\node_modules\\@babel\\parser\\src\\parser\\expression.js:662:21)\n    at Object.parseMaybeUnary (C:\\webb\\gc2-frontity\\node_modules\\@babel\\parser\\src\\parser\\expression.js:633:23)\n    at Object.parseMaybeUnaryOrPrivate (C:\\webb\\gc2-frontity\\node_modules\\@babel\\parser\\src\\parser\\expression.js:388:14)"
-  ],
+  "errors": [],
   "warnings": [],
-  "hash": "97af5dd5d19db6e8c578",
+  "hash": "27ad559d0277cf87250b",
   "publicPath": "",
   "outputPath": "C:\\webb\\gc2-frontity\\build\\static",
   "assetsByChunkName": {
     "gc2-frontity": [
       "gc2-frontity.module.js",
-      "gc2-frontity.590f5906f1f8d19b88a9.hot-update.js"
+      "gc2-frontity.f0b90a3e68801f761776.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "590f5906f1f8d19b88a9.hot-update.json",
+      "name": "f0b90a3e68801f761776.hot-update.json",
       "size": 54,
       "chunks": [],
       "chunkNames": [],
@@ -32,7 +30,7 @@
       "info": {
         "sourceFilename": "packages/grafikcentralen/src/components/fonts/Roboto-Bold.ttf"
       },
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "fonts/Roboto-Medium.ttf",
@@ -42,11 +40,11 @@
       "info": {
         "sourceFilename": "packages/grafikcentralen/src/components/fonts/Roboto-Medium.ttf"
       },
-      "emitted": true
+      "emitted": false
     },
     {
-      "name": "gc2-frontity.590f5906f1f8d19b88a9.hot-update.js",
-      "size": 4106,
+      "name": "gc2-frontity.f0b90a3e68801f761776.hot-update.js",
+      "size": 8467,
       "chunks": [
         "gc2-frontity"
       ],
@@ -61,7 +59,7 @@
     },
     {
       "name": "gc2-frontity.module.js",
-      "size": 6710601,
+      "size": 7131621,
       "chunks": [
         "gc2-frontity"
       ],
@@ -80,7 +78,7 @@
       ],
       "assets": [
         "gc2-frontity.module.js",
-        "gc2-frontity.590f5906f1f8d19b88a9.hot-update.js"
+        "gc2-frontity.f0b90a3e68801f761776.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -92,7 +90,7 @@
       "id": "gc2-frontity",
       "files": [
         "gc2-frontity.module.js",
-        "gc2-frontity.590f5906f1f8d19b88a9.hot-update.js"
+        "gc2-frontity.f0b90a3e68801f761776.hot-update.js"
       ]
     }
   ]

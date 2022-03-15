@@ -32,10 +32,11 @@ const Root = ({ state }) => {
     </Head>
          <Global
           styles={css`
-          @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700');
+          @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
         //   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
             body {
-                font-family: "Roboto";
+                font-family: "Spartan";
                 margin: 0;
             }
           `}
