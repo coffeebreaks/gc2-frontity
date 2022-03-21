@@ -5,6 +5,7 @@ import TrackVisibility from 'react-on-screen';
 import { useEffect, useState } from "react";
 import LinkBlocks from "./acf/link_blocks";
 import Front_form from "./acf/front_form";
+import Om_oss from "./acf/om_oss";
 
 
 const Block = ({ isVisible , text, image }) => {
@@ -36,14 +37,18 @@ const Page =({state})=> {
         :
         x.acf_fc_layout === "link_blocks"
         ?
-          <TrackVisibility offset={400}  >
-            <LinkBlocks title={x.title} text={x.text} blocks={x.blocks} arrow={x.arrow} />
-          </TrackVisibility>
+        <LinkBlocks title={x.title} text={x.text} blocks={x.blocks} arrow={x.arrow} />
         :
         x.acf_fc_layout === "front_form"
         ?
           <Front_form text={x.text}/>
+        :
+        x.acf_fc_layout === "om_oss"
+        ? 
+        <>
         
+        <Om_oss rubrik={x.rubrik} divider={x.divider} logo={x.logo} introtext={x.introtext} profilbild={x.profilbild} argument={x.argument}/>
+        </>        
 
         : ""}
 
