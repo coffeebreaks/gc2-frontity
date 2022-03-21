@@ -1,5 +1,6 @@
 import connect from "@frontity/connect"
 import {styled, keyframes} from "frontity"
+import TrackVisibility from 'react-on-screen';
 
 import React, { useState, useEffect } from 'react';
 
@@ -57,9 +58,6 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
 
     `
 
-
-    
-
     const MonoImage = styled.img`
         width: 100%;
         height: 100%;
@@ -79,7 +77,6 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         display: flex;
         flex-flow: row;
         margin-top: 6rem;
-
     `
 
            const Text = styled.div`
@@ -106,9 +103,9 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
     const ImageBlock = styled.div`
         opacity: 0;
         width: 100%;
-        animation: ${isVisible?slide:slideRestore};
-        animation-duration: ${isVisible?1:.3}s;
-        animation-delay: ${isVisible?props => (props.delay + 0.5) * 0.1:0}s;
+        animation: ${props => props.isVisible?slide:slideRestore};
+        animation-duration: ${isVisible?.5:.5}s;
+        animation-delay: ${isVisible?props => (props.delay ) * 0.4:0}s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
         position: relative;
@@ -128,14 +125,16 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         right: 10px;
         z-index: 99;
     `
+    
 
     return (
         <Wrapper>
             <h2>{title}</h2>
             <Html html={text}/>
             <ImageFlex>
+                <TrackVisibility partialVisibility>
                 {blocks.map((x, i)=>
-                <ImageBlock delay={i}>
+                <ImageBlock delay={i} isVisible={isVisible}>
                     <MonoImage src={x.image.url}/>
                     <Text>
                     <Html html={x.text}/>
@@ -143,6 +142,7 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
                    <Arrow src={arrow.url}/>
                 </ImageBlock>
                 )}
+                </TrackVisibility>
             </ImageFlex>
         </Wrapper>
 

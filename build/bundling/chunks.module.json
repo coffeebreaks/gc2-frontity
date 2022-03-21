@@ -1,27 +1,13 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "27ad559d0277cf87250b",
+  "hash": "cec9190cf399f8cb8cfe",
   "publicPath": "",
   "outputPath": "C:\\webb\\gc2-frontity\\build\\static",
   "assetsByChunkName": {
-    "gc2-frontity": [
-      "gc2-frontity.module.js",
-      "gc2-frontity.f0b90a3e68801f761776.hot-update.js"
-    ]
+    "gc2-frontity": "gc2-frontity.module.js"
   },
   "assets": [
-    {
-      "name": "f0b90a3e68801f761776.hot-update.json",
-      "size": 54,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
     {
       "name": "fonts/Roboto-Bold.ttf",
       "size": 167336,
@@ -43,23 +29,8 @@
       "emitted": false
     },
     {
-      "name": "gc2-frontity.f0b90a3e68801f761776.hot-update.js",
-      "size": 8467,
-      "chunks": [
-        "gc2-frontity"
-      ],
-      "chunkNames": [
-        "gc2-frontity"
-      ],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
-    {
       "name": "gc2-frontity.module.js",
-      "size": 7131621,
+      "size": 7199607,
       "chunks": [
         "gc2-frontity"
       ],
@@ -67,7 +38,7 @@
         "gc2-frontity"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true
     }
   ],
   "filteredAssets": 0,
@@ -77,8 +48,7 @@
         "gc2-frontity"
       ],
       "assets": [
-        "gc2-frontity.module.js",
-        "gc2-frontity.f0b90a3e68801f761776.hot-update.js"
+        "gc2-frontity.module.js"
       ],
       "children": {},
       "childAssets": {}
@@ -89,8 +59,7 @@
     {
       "id": "gc2-frontity",
       "files": [
-        "gc2-frontity.module.js",
-        "gc2-frontity.f0b90a3e68801f761776.hot-update.js"
+        "gc2-frontity.module.js"
       ]
     }
   ]

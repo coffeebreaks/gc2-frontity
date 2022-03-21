@@ -18,6 +18,9 @@ const Hero =({image, text, libraries, animation, isVisible })=> {
     const Wrapper = styled.div`
         width: 100%;
         height: 600px;
+        @media(max-width: 500px){
+            height: 285px;
+        }
         overflow: hidden;
         display:block;
         position: relative;
@@ -41,6 +44,9 @@ const Hero =({image, text, libraries, animation, isVisible })=> {
     opacity: 0;
         position: absolute;
         top: 170px;
+        @media(max-width: 500px){
+            top: 30px;
+        }
         animation: ${isVisible?slide:""};
         animation-duration: 2s;
         animation-iteration-count: 1;
@@ -51,12 +57,20 @@ const Hero =({image, text, libraries, animation, isVisible })=> {
             padding: 1rem;
             font-size: 3rem;
             width: fit-content;
+            @media(max-width: 500px){
+                font-size: 15px;
+                max-width: 280px;
+            }
            
         }
         h2 {
             background: black;
             padding: 1rem;
             width: fit-content;
+            @media(max-width: 500px){
+                font-size: 12px;
+                max-width: 150px;
+            }
         }
     `
 
