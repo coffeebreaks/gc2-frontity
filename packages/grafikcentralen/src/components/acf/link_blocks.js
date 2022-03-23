@@ -52,15 +52,15 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
 
         p {
             margin: 0 auto;
-            
             max-width: 30ch;
         }
 
     `
 
     const MonoImage = styled.img`
+    
         width: 100%;
-        height: 100%;
+        height: 320px;
         object-fit: cover;
         filter: grayscale(1) brightness(0.5) contrast(1);
         object-position: center;
@@ -75,8 +75,13 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
 
     const ImageFlex = styled.div`
         display: flex;
+        position: relative;
         flex-flow: row;
         margin-top: 6rem;
+        justify-content: space-evenly;
+        @media(max-width: 600px){
+            flex-flow: column;
+        }
     `
 
            const Text = styled.div`
@@ -85,24 +90,39 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
            transition: .5s ;
            left: 10px;
            color: white;
+           @media(max-width: 600px){
+            bottom: 10px;
+            
+           }
           
            h3 {
                text-transform: uppercase;
                text-align: left;
                font-size: 2rem;
-           }
+                @media(max-width: 600px){
+                    font-size: 20px;
+                    text-align: center;
+                }
+            }
            
            p {
+               opacity: 0;
                text-align: left;
                margin: 0px;
                color: white;
                line-height: 1.8;
+               @media(max-width: 600px){
+                   opacity: 1;
+                   font-size: 12px;
+               }
+
            }
        `
 
     const ImageBlock = styled.div`
         opacity: 0;
         width: 100%;
+        height:303px;
         animation: ${props => props.isVisible?slide:slideRestore};
         animation-duration: ${isVisible?.5:.5}s;
         animation-delay: ${isVisible?props => (props.delay ) * 0.4:0}s;
@@ -116,7 +136,12 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
             h3 {
                 color: #5196ff;
             }
+            p {
+                opacity: 1;
+            }
         }
+
+        
         `
 
     const Arrow = styled.img`
@@ -125,6 +150,75 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         right: 10px;
         z-index: 99;
     `
+
+    const SingleBlock = styled(TrackVisibility)`
+    min-height: 310px;
+    min-width: 320px;
+    background: gray;
+    overflow: hidden;
+    `
+
+    const DotsFade = keyframes`
+        0% {
+            opacity: 0;
+        }
+
+        40% {
+            opacity: .5;
+        }
+
+        60% {
+            opacity: 0;
+        }
+
+
+        
+
+    `
+
+    const Dot = styled.div`
+        height: 40px;
+        width: 40px;
+        background: white;
+        border-radius: 50%;
+        position: relative;
+        opacity: 0;
+        margin: 1rem;
+        top: 50%;
+        animation: ${DotsFade};
+        animation-delay: ${props => (props.delay/3)}s;
+        animation-duration:  ${props => (props.speed/3)}s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forward;
+
+    `
+
+    const DotFlex = styled.div`
+    position: relative;
+    @media(min-width: 600px){
+        display: none;
+    }
+    width: 100%;
+    top: 100px;
+    margin: 0 auto;
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+   
+        `
+    
+    const LoadingDots = ()=> {
+        return (
+            <DotFlex>
+                <Dot speed="3" delay="1"/>
+                <Dot speed="3" delay="2"/>
+                <Dot speed="3" delay="3"/>
+            </DotFlex>
+        )
+    }
     
 
     return (
@@ -132,8 +226,10 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
             <h2>{title}</h2>
             <Html html={text}/>
             <ImageFlex>
-                <TrackVisibility partialVisibility>
                 {blocks.map((x, i)=>
+                <>
+                <LoadingDots/>
+                <SingleBlock partialVisibility>
                 <ImageBlock delay={i} isVisible={isVisible}>
                     <MonoImage src={x.image.url}/>
                     <Text>
@@ -141,8 +237,9 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
                     </Text>
                    <Arrow src={arrow.url}/>
                 </ImageBlock>
+                </SingleBlock>
+                </>
                 )}
-                </TrackVisibility>
             </ImageFlex>
         </Wrapper>
 
