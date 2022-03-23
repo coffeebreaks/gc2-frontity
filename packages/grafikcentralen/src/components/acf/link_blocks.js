@@ -142,7 +142,7 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         }
 
         
-        `
+    `
 
     const Arrow = styled.img`
         position: absolute;
@@ -152,10 +152,10 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
     `
 
     const SingleBlock = styled(TrackVisibility)`
-    min-height: 310px;
-    min-width: 320px;
-    background: gray;
-    overflow: hidden;
+        min-height: 310px;
+        min-width: 320px;
+        background: gray;
+        overflow: hidden;
     `
 
     const DotsFade = keyframes`

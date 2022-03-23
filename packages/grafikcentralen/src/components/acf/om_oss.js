@@ -63,7 +63,7 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
         h2 {
             text-transform: uppercase;
             max-width: 30ch;
-            text-align:center;
+            text-align:left;
         }
         p {
             max-width: 40ch;
