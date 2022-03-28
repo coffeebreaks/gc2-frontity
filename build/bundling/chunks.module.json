@@ -1,18 +1,18 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "75458e9796f9670238de",
+  "hash": "049d339f7ab8b17a276b",
   "publicPath": "",
   "outputPath": "C:\\webb\\gc2-frontity\\build\\static",
   "assetsByChunkName": {
     "gc2-frontity": [
       "gc2-frontity.module.js",
-      "gc2-frontity.22d132e68431ae5b31a2.hot-update.js"
+      "gc2-frontity.bb12e1c9fbda7a608dce.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "22d132e68431ae5b31a2.hot-update.json",
+      "name": "bb12e1c9fbda7a608dce.hot-update.json",
       "size": 54,
       "chunks": [],
       "chunkNames": [],
@@ -43,8 +43,8 @@
       "emitted": false
     },
     {
-      "name": "gc2-frontity.22d132e68431ae5b31a2.hot-update.js",
-      "size": 62437,
+      "name": "gc2-frontity.bb12e1c9fbda7a608dce.hot-update.js",
+      "size": 44444,
       "chunks": [
         "gc2-frontity"
       ],
@@ -59,7 +59,7 @@
     },
     {
       "name": "gc2-frontity.module.js",
-      "size": 7254630,
+      "size": 7351824,
       "chunks": [
         "gc2-frontity"
       ],
@@ -78,7 +78,7 @@
       ],
       "assets": [
         "gc2-frontity.module.js",
-        "gc2-frontity.22d132e68431ae5b31a2.hot-update.js"
+        "gc2-frontity.bb12e1c9fbda7a608dce.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -90,7 +90,7 @@
       "id": "gc2-frontity",
       "files": [
         "gc2-frontity.module.js",
-        "gc2-frontity.22d132e68431ae5b31a2.hot-update.js"
+        "gc2-frontity.bb12e1c9fbda7a608dce.hot-update.js"
       ]
     }
   ]

@@ -40,6 +40,10 @@ const Front_form = ({libraries, text}) => {
 
     const Wrapper = styled.div`
         margin: 4rem 0;
+        @media(max-width: 600px){
+            margin-top: 0;
+            padding: 2rem;
+        }
         display: flex;
         flex-direction: column;
         justify-content: center;

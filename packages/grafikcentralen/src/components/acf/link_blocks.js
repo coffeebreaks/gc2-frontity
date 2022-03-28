@@ -37,22 +37,31 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
 
     `
     const Wrapper = styled.div`
-        width: 100%;
+        @media(max-width:600px){
+            padding: 1rem;
+        }
         overflow: hidden;
         display:block;
         position: relative;
         text-align: center;
         h2 {
-            margin-top: 6rem;
+            margin-top: 8rem;
             padding: 1rem;
             text-transform: uppercase;
             font-size: 3rem;
             margin-bottom: 0;
+            @media(max-width: 600px){
+                margin-top: 1rem;
+                font-size: 2rem ;
+            }
         }
 
         p {
-            margin: 0 auto;
             max-width: 30ch;
+            @media(max-width: 600px){
+                font-size: 12px ;
+                margin-bottom: 1rem ;
+            }
         }
 
     `
@@ -60,13 +69,16 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
     const MonoImage = styled.img`
     
         width: 100%;
-        height: 320px;
+        height: 450px;
         object-fit: cover;
         filter: grayscale(1) brightness(0.5) contrast(1);
         object-position: center;
         flex-basis: 100%;
         position: relative;
         transition: .5s;
+        @media(max-width: 500px){
+            filter: grayscale(0) brightness(0.5) contrast(1);
+        }
         &:hover {
             transition: .5s;
             filter: grayscale(0) brightness(0.5) contrast(1);
@@ -81,6 +93,7 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         justify-content: space-evenly;
         @media(max-width: 600px){
             flex-flow: column;
+            margin-top: 0px;
         }
     `
 
@@ -122,7 +135,7 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
     const ImageBlock = styled.div`
         opacity: 0;
         width: 100%;
-        height:303px;
+        height:429px;
         animation: ${props => props.isVisible?slide:slideRestore};
         animation-duration: ${isVisible?.5:.5}s;
         animation-delay: ${isVisible?props => (props.delay ) * 0.4:0}s;
@@ -153,7 +166,7 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
 
     const SingleBlock = styled(TrackVisibility)`
         min-height: 310px;
-        min-width: 320px;
+        min-width: 220px;
         background: gray;
         overflow: hidden;
     `
@@ -170,10 +183,6 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         60% {
             opacity: 0;
         }
-
-
-        
-
     `
 
     const Dot = styled.div`
@@ -190,11 +199,10 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         animation-duration:  ${props => (props.speed/3)}s;
         animation-iteration-count: infinite;
         animation-fill-mode: forward;
-
     `
 
     const DotFlex = styled.div`
-    position: relative;
+    position: absolute;
     @media(min-width: 600px){
         display: none;
     }
@@ -204,7 +212,6 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         display: flex;
         flex-flow: row;
         width: 100%;
-        height: 100%;
         justify-content: center;
         align-items: center;
    
@@ -219,15 +226,25 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
             </DotFlex>
         )
     }
+
+    const Introtext = styled.div`
+        p {
+        text-align: center;
+
+        margin: 0 auto;
+        }
+        `
     
 
     return (
         <Wrapper>
             <h2>{title}</h2>
+            <Introtext>
             <Html html={text}/>
+            </Introtext>
             <ImageFlex>
                 {blocks.map((x, i)=>
-                <>
+                <div style={{position: "relative", marginBottom: "1rem"}} >
                 <LoadingDots/>
                 <SingleBlock partialVisibility>
                 <ImageBlock delay={i} isVisible={isVisible}>
@@ -238,7 +255,7 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
                    <Arrow src={arrow.url}/>
                 </ImageBlock>
                 </SingleBlock>
-                </>
+                </div>
                 )}
             </ImageFlex>
         </Wrapper>

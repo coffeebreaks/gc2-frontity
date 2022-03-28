@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import LinkBlocks from "./acf/link_blocks";
 import Front_form from "./acf/front_form";
 import Om_oss from "./acf/om_oss";
+import Clients from "./acf/clients";
+
 
 
 const Block = ({ isVisible , text, image }) => {
@@ -46,10 +48,14 @@ const Page =({state})=> {
         x.acf_fc_layout === "om_oss"
         ? 
         <>
-        
         <Om_oss rubrik={x.rubrik} divider={x.divider} logo={x.logo} introtext={x.introtext} profilbild={x.profilbild} argument={x.argument}/>
-        </>        
-
+        </>  
+        :  
+        x.acf_fc_layout === "clients"
+        ?
+        <>
+        <Clients introtext={x.introtext} clients={x.clients}/>
+        </>    
         : ""}
 
     

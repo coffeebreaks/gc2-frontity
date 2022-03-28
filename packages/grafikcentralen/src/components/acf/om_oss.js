@@ -10,10 +10,10 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
     const Wrapper = styled.div`
         display: flex;
         flex-flow: column;
-        background-color: #313131;
-        color: white;
+        border-top: 21px solid #48566c;
+        background-color: #374458;
+        color: #ffffff;
         overflow-x: clip;
-        padding: 0 16%;
         @media(max-width: 500px){
            padding: 1rem;
            align-items:center;
@@ -22,7 +22,7 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
 
     const Divider = styled.img`
         width: 100%;
-        margin-bottom: -6px;
+        margin-bottom: -8px;
         @media(max-width: 500px){
             display: none;
         }
@@ -31,10 +31,13 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
 
     const Profilbild = styled.img`
         width: 100px;
-        
         height: 100px;
         object-fit: cover;
         border-radius: 50%;
+        @media(max-width: 600px){
+            width: 60px ;
+            height: 60px ;
+        }
     `
 
     const Argument = styled.div`
@@ -48,7 +51,7 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
         }
 
         p {
-            max-width: 20ch;
+            max-width: 25ch;
         }
     `
 
@@ -87,44 +90,80 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
             max-width: 400px;
             height: auto;
             @media(max-width: 500px){
-                width: 280px;
+                width: 230px;
+                margin: 0 auto ;
             }
         `
 
         const ProfileBox = styled.div`
             display: flex;
-            margin-left: auto;
+            margin: 0 auto;
             @media(max-width: 500px){
                 margin-left: initial;
+                flex-flow: row;
+                margin: initial;
             }
             flex-flow: column;
+            
             align-items: center;
             justify-content: center;
             p {
                 max-width: 15ch;
-                text-align: center;
+                text-align: center ;
+               
             }
         `
   
 
+        const Paragraf = styled.div`
+            @media(max-width: 600px){
+                h2 {
+                    font-size: 18px ;
+                    text-align: center;
+                }   
+                p {
+                    max-width: 20ch ;
+                    margin: 0 auto;
+                    margin-bottom: 1rem;
+                }
+            }
+
+
+        `
+
+        const InnerWrapper = styled.div`
+            max-width: 1300px;
+            width: 100% ;
+            margin: 0 auto;
+            padding: 2rem;
+            @media(max-width: 500px){
+                display: flex;
+                padding: 0rem;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+            }
+        `
+
 
     return (
         <>
-        <Divider src={divider.url} height={divider.height} width={divider.width} alt={divider.alt}/>
+        {/* <Divider src={divider.url} height={divider.height} width={divider.width} alt={divider.alt}/> */}
         <Wrapper>
+            <InnerWrapper>
         <Rubrik>    
         {rubrik}
         </Rubrik>
         <Logo src={logo.url} alt={logo.alt} width={logo.width} height={logo.height}/>
         
         <Row>
-        <div>
+        <Paragraf>
         <Html html={introtext}/>
-        </div>
+        </Paragraf>
 
         <ProfileBox>
         <Profilbild src={profilbild.url} alt={profilbild.alt} width={profilbild.width} height={profilbild.height}/>
-        <p> Stefan Jakobsson - Grundare Grafikcentralen</p>
+        <p> Stefan Jakobsson Grundare Grafikcentralen</p>
         </ProfileBox>
         </Row>
 
@@ -135,6 +174,7 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
         </Text>
         )}
         </Argument>
+        </InnerWrapper>
         </Wrapper>
         </>
     )
