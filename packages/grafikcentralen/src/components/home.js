@@ -7,13 +7,14 @@ import MainMenu from "./nav/mainMenu.js"
 import RobotoMedium from "./fonts/Roboto-Medium.ttf"
 import RobotoBold from "./fonts/Roboto-Bold.ttf"
 
+import Post from "./post.js"
+
 const Root = ({ state }) => {
   // connect-src 'self' https://gc.webbdesign.org;
     // base-uri 'self' https://gc.webbdesign.org;
     // style-src 'self' https://gc.webbdesign.org;
     // script-src 'self' https://gc.webbdesign.org;
     const data = state.source.get(state.router.link);
-    const Post =({state})=> <>Post</>
     const List =({state})=> <>List</>
 
   return (

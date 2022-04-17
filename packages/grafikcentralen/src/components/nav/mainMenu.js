@@ -128,9 +128,11 @@ const MainMenu =({state})=> {
     <Upper>
 
     <Logo>
+        <Link link="/">
         <source srcSet={logoWebp} type="image/webp"/>
         <source srcSet={options.acf.logo2.url} width={options.acf.logo2.width} height={options.acf.logo2.height} type="image/jpeg"/> 
         <img src={options.acf.logo2.url} alt={options.acf.logo2.alt} width={options.acf.logo2.width} height={options.acf.logo2.height}/>
+        </Link>
     </Logo>
 
     <MainNav>

@@ -7,6 +7,13 @@ import LinkBlocks from "./acf/link_blocks";
 import Front_form from "./acf/front_form";
 import Om_oss from "./acf/om_oss";
 import Clients from "./acf/clients";
+import pageIntro from "./acf/pageIntro";
+import PageIntro from "./acf/pageIntro";
+import InfoBox from "./acf/infoBox";
+import Styled_list from "./acf/styled_list";
+import StaticBanner from "./acf/static_banner";
+import BlogFront from "./acf/blog_front"
+
 
 
 
@@ -24,39 +31,33 @@ const Page =({state})=> {
   const data = state.source.get(state.router.link);
   const blocks = state.source.page[data.id].acf.innehall
 
-    return (
-<>
-     
+  let block
+  return (
+    <>
      {blocks.map((x,i)=> 
     <div key={i}>
       
-    {/* {x.acf_fc_layout} */}
-        {x.acf_fc_layout === "hero"
-        ?  
-          <TrackVisibility offset={350}>
-            <Block text={x.text} animation={true} image={x.image}/>
-          </TrackVisibility>
-        :
-        x.acf_fc_layout === "link_blocks"
-        ?
-        <LinkBlocks title={x.title} text={x.text} blocks={x.blocks} arrow={x.arrow} />
-        :
-        x.acf_fc_layout === "front_form"
-        ?
-          <Front_form text={x.text}/>
-        :
-        x.acf_fc_layout === "om_oss"
-        ? 
-        <>
-        <Om_oss rubrik={x.rubrik} divider={x.divider} logo={x.logo} introtext={x.introtext} profilbild={x.profilbild} argument={x.argument}/>
-        </>  
-        :  
-        x.acf_fc_layout === "clients"
-        ?
-        <>
-        <Clients introtext={x.introtext} clients={x.clients}/>
-        </>    
-        : ""}
+   
+      <Switch>
+        {block = x.acf_fc_layout}
+        
+        <TrackVisibility when={block === "hero"} offset={350}>
+          <Block text={x.text} animation={true} image={x.image}/>
+        </TrackVisibility>
+
+        <LinkBlocks when={block === "link_blocks"} title={x.title} text={x.text} blocks={x.blocks} arrow={x.arrow} />
+        <Front_form when={block === "front_form"}text={x.text}/>
+        <Om_oss when={block === "om_oss"} rubrik={x.rubrik} divider={x.divider} logo={x.logo} introtext={x.introtext} profilbild={x.profilbild} argument={x.argument}/>
+        <Clients when={block === "clients"} introtext={x.introtext} clients={x.clients}/>
+        <PageIntro when={block === "page_intro"} api={x} />
+        <InfoBox when={block === "infobox"} api={x} />
+        <Styled_list when={block === "styled_list"} api={x} />
+        <StaticBanner when={block === "static_banner"} api={state.source.data} data={x} />
+        <Front_form when={block === "kontaktformular"} text={x.text}/>
+        <BlogFront when={block === "blog_front"} header={x.header} startpost={x.startpost} />
+
+      </Switch>
+      
 
     
     </div>
@@ -67,3 +68,5 @@ const Page =({state})=> {
     )
 }
     export default connect(Page)
+      
+      
