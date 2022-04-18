@@ -40,6 +40,7 @@ const Page =({state})=> {
       
    
       <Switch>
+        
         {block = x.acf_fc_layout}
         
         <TrackVisibility when={block === "hero"} offset={350}>
