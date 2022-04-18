@@ -8,7 +8,7 @@ const StaticBanner = ({api, libraries, data}) => {
     const content = api[key].acf.gc_banner
     const logo = api[key].acf.logo2
     const flexBreak = "900px"
-    console.log("-->", api[key].acf  )
+  
 
     const StaticBannerBlock = styled.div`
         display: flex;

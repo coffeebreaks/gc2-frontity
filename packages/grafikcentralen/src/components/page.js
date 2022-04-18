@@ -13,6 +13,7 @@ import InfoBox from "./acf/infoBox";
 import Styled_list from "./acf/styled_list";
 import StaticBanner from "./acf/static_banner";
 import BlogFront from "./acf/blog_front"
+import Footer from "./acf/footer"
 
 
 
@@ -58,12 +59,12 @@ const Page =({state})=> {
 
       </Switch>
       
-
     
     </div>
 
     )}
    
+  <Footer />
 </>
     )
 }
