@@ -56,6 +56,9 @@ const Footer = ({libraries, state}) => {
     background-size: cover;
     background-attachment: fixed ;
     width: 100%;
+    @media(max-width: 1300px) {
+        flex-direction: column-reverse ;
+    }
     `
 
     const Left = styled.div`
@@ -66,6 +69,9 @@ const Footer = ({libraries, state}) => {
         align-items: center;
         width: 30%;
         height: auto;
+        @media(max-width: 1300px) {
+            width: 100%;
+    }
     `
 
     const Right = styled.div`
@@ -76,8 +82,13 @@ const Footer = ({libraries, state}) => {
         flex-flow: column;
         width: 70%;
         height: 100%;
+        @media(max-width: 1300px) {
+           
+
+    }
+        
         p {
-            max-width: 57ch ;
+            max-width: 57ch;
         }
 
         hr {
@@ -89,6 +100,12 @@ const Footer = ({libraries, state}) => {
             text-transform: uppercase;
             font-size: 92px;
             letter-spacing: -11px;
+            @media(max-width: 1100px){
+                font-size: 20px ;
+              
+                letter-spacing: inherit;
+            }
+            
         }
 
         h2 {
@@ -116,7 +133,7 @@ const Footer = ({libraries, state}) => {
             flex-flow: column ;
             label {
                     font-size: 10px ;
-                    transform: translateY(33px) translateX(5px) ;
+                    transform: translateY(33px) translateX(5px);
                 }
             button {
                 max-width: fit-content;
@@ -167,6 +184,7 @@ const Footer = ({libraries, state}) => {
    <Background img={background.url}>
     
         <Left>
+            
         <Wrapper>
         <Html2React html="Kontakta oss"/>
         <Form onSubmit={sendMail}>
