@@ -83,7 +83,7 @@ const Footer = ({libraries, state}) => {
         width: 70%;
         height: 100%;
         @media(max-width: 1300px) {
-           
+           width: initial ;
 
     }
         
@@ -127,7 +127,10 @@ const Footer = ({libraries, state}) => {
     `
 
     const Wrapper = styled.div`
-  
+         @media(max-width: 1300px) {
+           width: 100% ;
+           padding: 1rem ;
+    }
         form {
             display: flex ;
             flex-flow: column ;
@@ -151,6 +154,10 @@ const Footer = ({libraries, state}) => {
         `
  
     const Input = styled.input`
+    @media(max-width: 1300px) {
+         
+           min-width: initial ;
+    }
         background-color: #6c6c6c6b;
         background-blend-mode: screen;
         color: white;
@@ -158,10 +165,15 @@ const Footer = ({libraries, state}) => {
         margin: 1rem 0;
         border: none;
         min-width: 300px;
+   
         `
         
        
     const Textarea = styled.textarea`
+    @media(max-width: 1300px) {
+          
+           min-width: initial ;
+    }
       background-color: #6c6c6c6b;
         background-blend-mode: screen;
         color: white;
@@ -170,8 +182,17 @@ const Footer = ({libraries, state}) => {
         border: none;
         min-width: 300px;
         resize: vertical;
+  
         `
-    const Form = styled.form``
+    const Form = styled.form`
+
+@media(max-width: 1300px) {
+           width: 100%;
+           min-width: initial ;
+    }
+
+
+    `
     const Button = styled.button``
 
     const Banner = styled.div`
