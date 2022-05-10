@@ -35,6 +35,7 @@ const StyledList = ({api, libraries}) => {
     margin: 1rem;
     padding: 1rem;
     width: 40%;
+    
     @media(max-width: 800px){
         width: 100%;
         text-align: center;

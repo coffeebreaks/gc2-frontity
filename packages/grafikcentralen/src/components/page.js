@@ -14,6 +14,7 @@ import Styled_list from "./acf/styled_list";
 import StaticBanner from "./acf/static_banner";
 import BlogFront from "./acf/blog_front"
 import Footer from "./acf/footer"
+import Portfolio from "./acf/portfolio";
 
 
 
@@ -57,6 +58,7 @@ const Page =({state})=> {
         <StaticBanner when={block === "static_banner"} api={state.source.data} data={x} />
         <Front_form when={block === "kontaktformular"} text={x.text}/>
         <BlogFront when={block === "blog_front"} header={x.header} startpost={x.startpost} />
+        <Portfolio when={block === "fullpage_portfolio"} data={x} />
 
       </Switch>
       

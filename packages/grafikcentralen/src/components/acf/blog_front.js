@@ -199,6 +199,16 @@ const Readmore = styled(Link)`
 const LinkCard = styled(Link)`
     color: inherit;
     text-decoration: inherit;
+    @media(max-width: 1000px){
+        padding: 1rem;
+    }
+`
+
+const Button = styled.button `
+    padding: 1rem;
+    background: white;
+    outline: none;
+    border: 1px solid black;
 `
 
 
@@ -213,7 +223,7 @@ return (
     </Header>
     <FeaturedArticle>
                 <Desktop>
-                <FeaturedImage src={startPost[0].featured_image_src} />
+                    <FeaturedImage src={startPost[0].featured_image_src} />
                 </Desktop>
         <FeaturedContent>
      
@@ -267,7 +277,7 @@ return (
             )
         }
         </RecentPosts>
-        <button onClick={()=> setCount(99)}> Visa fler nyheter</button> 
+        <Button onClick={()=> setCount(99)}> Visa fler nyheter</Button> 
 
 
     </Wrapper>

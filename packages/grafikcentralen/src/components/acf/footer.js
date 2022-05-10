@@ -13,227 +13,131 @@ const Footer = ({libraries, state}) => {
     const key = "acf-settings/"
     const content = state.source.data[key].acf.text
     const logos = state.source.data[key].acf.logos
+    const pageLogo = state.source.data[key].acf.logo
+    const subFooter = state.source.data[key].acf.subfooter
     const menu = state.source.data[key].acf.menu
     const background = state.source.data[key].acf.background
 
-    function sendMail(e){
-        e.preventDefault()
-     
-        let data = new FormData()
 
-        data.set("your-subject", "Förfrågan från Chimneytec.se")
-        data.set("your-name", e.target.name.value)
-        data.set("your-email", e.target.email.value)
-        data.set("your-message", e.target.message.value)
-        data.set("your-company", "demo")
-
-        axios.post(
-            `https://gc.webbdesign.org/wp-json/contact-form-7/v1/contact-forms/287/feedback`,
-            data,
-            {
-                headers: {
-                    "content-type": "multipart/form-data",
-                },
-            }
-            ) 
-            .then(response => {
-                setFormResp(response.data.message)
-                response.data.status === "mail_sent"? showForm(false): showForm(true)
-                console.log(response.data.status)
-            }
-                )
-           
-    }
-
-
-
-    const Background = styled.div `
-    display: flex;
-    flex-flow: row;
-    min-height: 300px;
-    background: url('${props => props.img}');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed ;
-    width: 100%;
-    @media(max-width: 1300px) {
-        flex-direction: column-reverse ;
-    }
+    const Wrapper = styled.footer`
+    background-color: black ;
+    color: white;
+    min-height: 400px ;
+    position: relative;
+    overflow: hidden ;
+    margin-top: 2rem ;
     `
 
-    const Left = styled.div`
-            background: #000000eb;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 30%;
-        height: auto;
-        @media(max-width: 1300px) {
-            width: 100%;
+    const drop = keyframes`
+    0% {
+        height: 0px ;
     }
-    `
 
-    const Right = styled.div`
-    background: #000000bd;
-    padding: 2rem;
-        color: white;
-        display: flex;
-        flex-flow: column;
-        width: 70%;
-        height: 100%;
-        @media(max-width: 1300px) {
-           width: initial ;
-
+    70%{
+        opacity: 1;
     }
-        
-        p {
-            max-width: 57ch;
-        }
 
-        hr {
-            border: 1px solid #5196FF;
-            width: -webkit-fill-available;
-        }
-
-        h1 {
-            text-transform: uppercase;
-            font-size: 92px;
-            letter-spacing: -11px;
-            @media(max-width: 1100px){
-                font-size: 20px ;
-              
-                letter-spacing: inherit;
-            }
-            
-        }
-
-        h2 {
-            color:  #5196FF;
-        }
-
-        ul {
-            li {
-            list-style: none;
-            font-size: 14px ;
-            margin-bottom: 5px ;
-            font-weight: 100 ;
-            color: white;
-            strong{
-                font-weight: 600 ;
-            }
-            }
-        }
-    `
-
-    const Wrapper = styled.div`
-         @media(max-width: 1300px) {
-           width: 100% ;
-           padding: 1rem ;
-    }
-        form {
-            display: flex ;
-            flex-flow: column ;
-            label {
-                    font-size: 10px ;
-                    transform: translateY(33px) translateX(5px);
-                }
-            button {
-                max-width: fit-content;
-                padding: 1rem 3rem;
-                text-transform: uppercase;
-                margin-top: 1rem;
-                border: 1px solid #5196ff;
-                background: black;
-                color: white;
-                font-weight: 700;
-                font-size: 12px;
-            }    
-        
-        }
-        `
- 
-    const Input = styled.input`
-    @media(max-width: 1300px) {
-         
-           min-width: initial ;
-    }
-        background-color: #6c6c6c6b;
-        background-blend-mode: screen;
-        color: white;
-        padding: 1.3rem;
-        margin: 1rem 0;
-        border: none;
-        min-width: 300px;
+    100% {
+        opacity: 0 ;
+        height: 500px;
    
-        `
-        
-       
-    const Textarea = styled.textarea`
-    @media(max-width: 1300px) {
-          
-           min-width: initial ;
     }
-      background-color: #6c6c6c6b;
-        background-blend-mode: screen;
-        color: white;
-        padding: 1.3rem;
-        margin: 1rem 0;
-        border: none;
-        min-width: 300px;
-        resize: vertical;
-  
-        `
-    const Form = styled.form`
-
-@media(max-width: 1300px) {
-           width: 100%;
-           min-width: initial ;
-    }
-
-
     `
-    const Button = styled.button``
 
-    const Banner = styled.div`
-        background-color: #1A1A1A ;
-        height: 100px ;
+    const Stripes = styled.div`
+        position: absolute ;
+        width: 50px ;
+        display: flex ;
+        justify-content: space-around ;
+        margin-left: 100px ;
+        height: 0px ;
+        @media(max-width: 1000px) {
+            width: 26px;
+     transform: rotate(270deg); 
+    margin-left: -2px;
+    margin-top: 31px;
+    margin-left: -13px;
+
+        }
+    `
+
+    const CenterContent = styled.div`
+         margin: 0 auto;
+        text-align: left;
+        max-width: 58ch;
+        font-size: 1rem;
+        line-height: 1.4;
+        /* font-weight: 100; */
+        color: #9f9f9f;
+        @media(max-width: 1000px) {
+            width: 80% ;
+            height: auto;
+        }
+    
+    `
+
+    const Stripe = styled.div`
+        animation-name: ${drop} ;
+        animation-duration: ${props => props.speed} ;
+        animation-delay: ${props => props.delay};
+        animation-iteration-count: infinite ;
+        background: linear-gradient(0deg, #000000 23.44%, ${props => props.color} 94.04%);
+        margin: 0 2px  ;
+        width: 8px ;
+        /* height: 400px ; */
+      
+     
+    `
+
+    const PageLogo = styled.img`
+        height: 49px;
+        display: inherit;
+        margin: 4rem auto;
+        @media(max-width: 1000px) {
+            width: 80% ;
+            height: auto;
+        }
+    `
+
+    const Subheader = styled.div`
+        max-width: 1300px ;
+        margin: 0 auto ;
+        margin-top: 3rem ;
+        border-top: 1px solid white;
+        display: flex ;
+        justify-content: space-between ;
+        font-size: 12px ;
+        align-items: center ;
+        @media(max-width: 1000px) {
+            flex-direction: column ;
+        }
+        a {
+            color: inherit;
+            text-decoration: none ;
+        }
     `
 
     return (
-        <>
-   <Background img={background.url}>
-    
-        <Left>
-            
-        <Wrapper>
-        <Html2React html="Kontakta oss"/>
-        <Form onSubmit={sendMail}>
-                    <label for="name"> Ditt namn</label>
-                    <Input type="text" name="name" required />
-                    <label for="tel"> Ditt telefonnummer</label>
-                    <Input type="text" name="tel" required />
-                    <label for="company "> Företag/Organisation</label>
-                    <Input type="company" name="text" required />
-                    <label for="email"> Din e-postadress</label>
-                    <Input type="text" name="email" required />
-                    <label for="message"> Din fråga</label>
-                    <Textarea rows="7" name="message" required ></Textarea>
-                    <Button type="submit">Kontakta oss</Button> 
-                </Form>
-        </Wrapper>
-        </Left>
+    <Wrapper>
+  
+        <Stripes>
+            <Stripe color="#07D91C" speed="4s" delay="1s"/>
+            <Stripe color="#FFD600" speed="5s" delay="0s"/>
+            <Stripe color="#E30000" speed="3s" delay="2s"/>
+            <Stripe color="#37C8F5" speed="3s" delay="1.3s"/>
+        </Stripes>
 
-        <Right>
-            <Html2React html={content}/>
-        </Right>
+        <CenterContent>
+            <PageLogo src={pageLogo.url}/>
+           <Html2React html={content}/>
+        </CenterContent>
+       
+        <Subheader>
+            {subFooter.map( (x)=> <Html2React html={x.content}/> )}
+        </Subheader>
 
-    </Background>
-    <Banner>
 
-asd
-    </Banner>
-    </>
+    </Wrapper>
     )
     }
 

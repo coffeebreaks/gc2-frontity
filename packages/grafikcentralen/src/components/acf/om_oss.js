@@ -10,8 +10,8 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
     const Wrapper = styled.div`
         display: flex;
         flex-flow: column;
-        border-top: 21px solid #48566c;
-        background-color: #374458;
+        border-top: 9px solid #2a2a2a;
+        background-color: #1a1b1c;
         color: #ffffff;
         overflow-x: clip;
         @media(max-width: 500px){
@@ -56,24 +56,16 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
     `
 
     const Row = styled.div`
-        margin-top: 3rem;
-        display: flex;
-        flex-flow: row;
-        @media(max-width: 500px){
-            flex-direction: column;
-        }
-
         h2 {
-            text-transform: uppercase;
-            max-width: 30ch;
-            text-align:left;
+            text-align: center ;
+            text-transform: uppercase ;
         }
         p {
-            max-width: 40ch;
-            line-height: 1.4;
-            font-weight: 100;
-            font-size: 14px;
+            max-width: 729px;
+            margin: 0 auto;
+            line-height: 1.5;
         }
+        margin: 1rem 0;
 
         `
         const Text = styled.div`
@@ -84,11 +76,14 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
 
         const Rubrik = styled.p`
             margin-bottom:1rem;
+            text-align:center ;
         `
 
         const Logo = styled.img`
             max-width: 400px;
+            margin: 0 auto;
             height: auto;
+
             @media(max-width: 500px){
                 width: 230px;
                 margin: 0 auto ;
@@ -98,6 +93,7 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
         const ProfileBox = styled.div`
             display: flex;
             margin: 0 auto;
+            margin-top: 1rem;
             @media(max-width: 500px){
                 margin-left: initial;
                 flex-flow: row;
@@ -115,24 +111,15 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
         `
   
 
-        const Paragraf = styled.div`
-            @media(max-width: 600px){
-                h2 {
-                    font-size: 18px ;
-                    text-align: center;
-                }   
-                p {
-                    max-width: 20ch ;
-                    margin: 0 auto;
-                    margin-bottom: 1rem;
-                }
-            }
+ 
 
 
-        `
 
         const InnerWrapper = styled.div`
             max-width: 1300px;
+            display: flex ;
+            flex-flow: column ;
+            justify-content:center ;
             width: 100% ;
             margin: 0 auto;
             padding: 2rem;
@@ -157,15 +144,14 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
         <Logo src={logo.url} alt={logo.alt} width={logo.width} height={logo.height}/>
         
         <Row>
-        <Paragraf>
-        <Html html={introtext}/>
-        </Paragraf>
-
-        <ProfileBox>
-        <Profilbild src={profilbild.url} alt={profilbild.alt} width={profilbild.width} height={profilbild.height}/>
-        <p> Stefan Jakobsson Grundare Grafikcentralen</p>
-        </ProfileBox>
+    
+            <Html html={introtext}/>
+            
         </Row>
+            <ProfileBox>
+            <Profilbild src={profilbild.url} alt={profilbild.alt} width={profilbild.width} height={profilbild.height}/>
+            <p> Stefan Jakobsson Grundare Grafikcentralen</p>
+            </ProfileBox>
 
         <Argument>
         {argument.map((x,i)=> 
