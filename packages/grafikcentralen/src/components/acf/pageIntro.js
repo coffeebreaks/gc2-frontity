@@ -8,6 +8,7 @@ const PageIntro = ({api, libraries}) => {
     const Wrapper = styled.div`
     background: white;
     color: black;
+    height: ${api.full_height? "100vh": "100%" };
     display: flex;
     flex-direction: column;
     text-align: center;
