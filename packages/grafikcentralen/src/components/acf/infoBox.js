@@ -106,7 +106,7 @@ const BottomRowItem = styled.div`
             <TopRowWrapper>
                 {api.top_row?.map((x, i) =>
                     <TopRowItem>
-                        <IconSmall src={x.icon} />
+                        <IconSmall src={x.icon.url} alt={x.icon.alt}/>
                         {x.text}
                     </TopRowItem>
                 )}

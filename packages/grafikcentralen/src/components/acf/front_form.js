@@ -32,7 +32,7 @@ const Front_form = ({libraries, text}) => {
             .then(response => {
                 setFormResp(response.data.message)
                 response.data.status === "mail_sent"? showForm(false): showForm(true)
-                console.log(response.data.status)
+              
             }
                 )
            
@@ -161,15 +161,15 @@ const Textarea = styled.textarea`
         <Wrapper>
         <Text html={text}/>
         <Form onSubmit={sendMail}>
-                    <Input type="text" name="name" required />
+                    <Input type="text" id="name" name="name" required />
                     <label for="name"> Ditt namn</label>
-                    <Input type="text" name="tel" required />
+                    <Input type="text" id="tel" name="tel" required />
                     <label for="tel"> Ditt telefonnummer</label>
-                    <Input type="company" name="text" required />
-                    <label for="company "> Företag/Organisation</label>
-                    <Input type="text" name="email" required />
+                    <Input type="company" id="company" name="text" required />
+                    <label for="company"> Företag/Organisation</label>
+                    <Input type="text" id="email" name="email" required />
                     <label for="email"> Din e-postadress</label>
-                    <Textarea rows="7" name="message" required ></Textarea>
+                    <Textarea rows="7" id="message" name="message" required ></Textarea>
                     <label for="message"> Din fråga</label>
                     <Button type="submit">Kontakta oss</Button> 
                 </Form>

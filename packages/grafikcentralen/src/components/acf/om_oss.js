@@ -155,7 +155,7 @@ const Om_oss = ({libraries, rubrik, logo, introtext, divider, profilbild, argume
 
         <Argument>
         {argument.map((x,i)=> 
-        <Text>
+        <Text key={i}>
             <Html key={i} html={x.text}/>
         </Text>
         )}

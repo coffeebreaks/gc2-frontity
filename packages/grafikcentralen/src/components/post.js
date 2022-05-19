@@ -174,7 +174,7 @@ const Post = ({state, libraries}) => {
         <Wrapper>
            
             <h1> {thisPost.title.rendered}</h1>   
-            {console.log(thisPost)} 
+   
             <MainContent>
                 <TheContent>
             <Ingress><Html html={thisPost.acf.ingress || ""} /></Ingress> 

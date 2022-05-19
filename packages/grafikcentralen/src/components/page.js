@@ -1,9 +1,9 @@
+import { useEffect, useState, lazy  } from "react";
 import { connect } from "frontity"
 import Hero from "./acf/hero";
 import Switch from "@frontity/components/switch"
 import TrackVisibility from 'react-on-screen';
-import { useEffect, useState } from "react";
-import LinkBlocks from "./acf/link_blocks";
+import LinkBlocks from './acf/link_blocks'
 import Front_form from "./acf/front_form";
 import Om_oss from "./acf/om_oss";
 import Clients from "./acf/clients";
@@ -34,6 +34,9 @@ const Page =({state})=> {
   const blocks = state.source.page[data.id].acf.innehall
 
   let block
+
+  const renderLoader = () => <p>Loading</p>;
+
   return (
     <>
      {blocks.map((x,i)=> 
@@ -48,7 +51,10 @@ const Page =({state})=> {
           <Block text={x.text} animation={true} image={x.image}/>
         </TrackVisibility>
 
+        
         <LinkBlocks when={block === "link_blocks"} title={x.title} text={x.text} blocks={x.blocks} arrow={x.arrow} />
+ 
+        
         <Front_form when={block === "front_form"}text={x.text}/>
         <Om_oss when={block === "om_oss"} rubrik={x.rubrik} divider={x.divider} logo={x.logo} introtext={x.introtext} profilbild={x.profilbild} argument={x.argument}/>
         <Clients when={block === "clients"} introtext={x.introtext} clients={x.clients}/>

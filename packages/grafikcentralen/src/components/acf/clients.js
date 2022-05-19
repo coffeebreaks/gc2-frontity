@@ -115,8 +115,8 @@ return (
         </Intro>
         <ClientWrapper>
             {
-                clients.map((x)=>
-                    <Content>
+                clients.map((x,i)=>
+                    <Content key={i}>
                         <TrackVisibility partialVisibility >
                             <AnimationWrapper isVisible={isVisible}>
                                 <Html html={x.content} />

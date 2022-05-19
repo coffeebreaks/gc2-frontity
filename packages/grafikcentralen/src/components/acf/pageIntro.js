@@ -38,7 +38,7 @@ const PageIntro = ({api, libraries}) => {
     max-width: 20ch;
     }
     .accent {
-        color: #5196ff;
+        color: #498df3;
     }
     `
 

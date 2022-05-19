@@ -103,13 +103,13 @@ const StaticBanner = ({api, libraries, data}) => {
     return (
         
         <BannerWrapper>
-        <Logo src={ logo.url}/>
+        <Logo src={logo.url} alt={logo.alt}/>
            
             <Heading>{data.text}</Heading>
             <ContentWrapper>
         {content.map((x)=>
         <Outer>       
-        <Icon src={x.icon}/>
+        <Icon src={x.icon.url} alt={x.icon.alt}/>
         <StaticBannerBlock> 
         <Html2React html={x.text}/>
         </StaticBannerBlock>

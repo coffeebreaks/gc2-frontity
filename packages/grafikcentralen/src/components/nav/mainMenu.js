@@ -131,7 +131,7 @@ const MainMenu =({state})=> {
         <Link link="/">
         <source srcSet={logoWebp} type="image/webp"/>
         <source srcSet={options.acf.logo2.url} width={options.acf.logo2.width} height={options.acf.logo2.height} type="image/jpeg"/> 
-        <img src={options.acf.logo2.url} alt={options.acf.logo2.alt} width={options.acf.logo2.width} height={options.acf.logo2.height}/>
+        <img src={options.acf.logo2.url} alt="Link to home" width={options.acf.logo2.width} height={options.acf.logo2.height}/>
         </Link>
     </Logo>
 
@@ -154,16 +154,13 @@ const MainMenu =({state})=> {
     {options.acf.contactNav.map((x,i)=>
     
         <Link key={i} link={x.link.url || "#"}>
-            <img src={x.icon.url}/>
+            <img src={x.icon.url} alt={x.icon.alt}/>
             {x.text}
         </Link > 
-    
+        
     )}
     </ContactNav>
-
     </Lower>
-
-
     </Menu>
     )
 }

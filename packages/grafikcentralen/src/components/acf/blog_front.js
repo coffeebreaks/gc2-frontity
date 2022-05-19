@@ -187,10 +187,10 @@ const PostImage = styled.img`
 `
 
 const Readmore = styled(Link)`
-        color: #729ee1;
+        color: #306bc7;
         font-weight: 500 ;
         text-decoration: none;
-        border-bottom: 1px solid #729ee1  ;
+        border-bottom: 1px solid #306bc7  ;
         width: max-content;
         margin-top: auto;
          
@@ -223,12 +223,12 @@ return (
     </Header>
     <FeaturedArticle>
                 <Desktop>
-                    <FeaturedImage src={startPost[0].featured_image_src} />
+                    <FeaturedImage src={startPost[0].featured_image_src} alt="Bild för blogg inlägget" />
                 </Desktop>
         <FeaturedContent>
      
             <Author>
-                <Profilepic src={author[0].bild.url} alt={author[0].alt} width={author[0].width} height={author[0].height} />
+                <Profilepic src={author[0].bild.url} alt="Profile pic" width={author[0].width} height={author[0].height} />
                 <AuthorName rel="author">{author[0].namn}</AuthorName>
                 <Time pubdate datetime={startPost[0].date}> 
                     <img src={timeIcon.url} alt={timeIcon.alt} width={timeIcon.width} height={timeIcon.height}/>
@@ -236,12 +236,12 @@ return (
                 </Time>
             </Author>
             <Mobile>
-                <FeaturedImage src={startPost[0].featured_image_src} />
+                <FeaturedImage src={startPost[0].featured_image_src}  alt="Bild för blogg inlägget" />
             </Mobile>
             <h2>{startPost[0].title.rendered}</h2>
             <Html html={startPost[0].excerpt.rendered} /> 
             <Readmore href={startPost[0].link}> Läs hela artikeln</Readmore>
-            {console.log("startpost", startPost[0])}
+        
         </FeaturedContent>
 
 
@@ -251,13 +251,13 @@ return (
         {
             //All posts
         posts.map((x,i)=> 
-        <>
+        <div key={i}>
                 {i < showCount?
         <Post>
               
                 <LinkCard link={x.link}>
                 <Author>
-                <Profilepic src={getAuthor(x.author).bild.url} alt={getAuthor(x.author).alt} width={getAuthor(x.author).width} height={getAuthor(x.author).height} />
+                <Profilepic src={getAuthor(x.author).bild.url}alt="Profile pic" width={getAuthor(x.author).width} height={getAuthor(x.author).height} />
                 <AuthorName rel="author">{getAuthor(x.author).namn}</AuthorName>
                 <Time pubdate datetime={x.modified}> 
                     <img src={timeIcon.url} alt={timeIcon.alt} width={timeIcon.width} height={timeIcon.height}/>
@@ -265,7 +265,7 @@ return (
                 </Time>
                 </Author>
                 <p>{x.title.rendered}</p>
-                <PostImage src={x.featured_image_src} />
+                <PostImage src={x.featured_image_src} alt="Bild för inlägget" />
                 <Html html={x.excerpt.rendered} />
                 <Readmore link={x.link}> • Läs hela artikeln</Readmore>
                 </LinkCard>
@@ -273,7 +273,7 @@ return (
 
             </Post>
                 :""}
-                </>
+                </div>
             )
         }
         </RecentPosts>

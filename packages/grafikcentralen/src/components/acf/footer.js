@@ -91,6 +91,7 @@ const Footer = ({libraries, state}) => {
 
     const PageLogo = styled.img`
         height: 49px;
+        width: auto;
         display: inherit;
         margin: 4rem auto;
         @media(max-width: 1000px) {
@@ -128,12 +129,12 @@ const Footer = ({libraries, state}) => {
         </Stripes>
 
         <CenterContent>
-            <PageLogo src={pageLogo.url}/>
+            <PageLogo src={pageLogo.url} alt={pageLogo.alt} width={pageLogo.width} height={pageLogo.height}/>
            <Html2React html={content}/>
         </CenterContent>
        
         <Subheader>
-            {subFooter.map( (x)=> <Html2React html={x.content}/> )}
+            {subFooter.map( (x,i)=> <Html2React key={i} html={x.content}/> )}
         </Subheader>
 
 

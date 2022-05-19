@@ -67,7 +67,9 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
     `
 
     const MonoImage = styled.img`
-    
+        @media(max-width: 500px){
+            height: fit-content;
+        }
         width: 100%;
         height: 450px;
         object-fit: cover;
@@ -136,6 +138,10 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         opacity: 0;
         width: 100%;
         height:429px;
+        @media(max-width: 500px){
+            height: fit-content;
+            
+        }
         animation: ${props => props.isVisible?slide:slideRestore};
         animation-duration: ${isVisible?.5:.5}s;
         animation-delay: ${isVisible?props => (props.delay ) * 0.4:0}s;
@@ -162,6 +168,9 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         top: 10px;
         right: 10px;
         z-index: 99;
+        @media(max-width: 600px){
+           display: none ;
+        }
     `
 
     const SingleBlock = styled(TrackVisibility)`
@@ -169,6 +178,10 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
         min-width: 220px;
         background: gray;
         overflow: hidden;
+        @media(max-width: 500px){
+            min-height: initial ;
+            background: white;
+        }
     `
 
     const DotsFade = keyframes`
@@ -244,15 +257,15 @@ const LinkBlocks =({libraries, isVisible, title, text, blocks, arrow })=> {
             </Introtext>
             <ImageFlex>
                 {blocks.map((x, i)=>
-                <div style={{position: "relative", marginBottom: "1rem"}} >
+                <div key={i} style={{position: "relative", marginBottom: "1rem"}} >
                 <LoadingDots/>
                 <SingleBlock partialVisibility>
                 <ImageBlock delay={i} isVisible={isVisible}>
-                    <MonoImage src={x.image.url}/>
+                    <MonoImage src={x.image.url} alt={x.image.alt}/>
                     <Text>
-                    <Html html={x.text}/>
+                        <Html html={x.text}/>
                     </Text>
-                   <Arrow src={arrow.url}/>
+                   <Arrow src={arrow.url} alt={arrow.alt}/>
                 </ImageBlock>
                 </SingleBlock>
                 </div>

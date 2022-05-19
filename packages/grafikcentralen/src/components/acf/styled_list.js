@@ -51,7 +51,7 @@ const StyledList = ({api, libraries}) => {
         <ListWrapper>
        {list.map((x)=>
        <TextWrapper>
-       <Icon src={x.icon}/>
+       <Icon src={x.icon.url} alt={x.icon.alt}/>
        <Html2React html={x.text}/>
        </TextWrapper>
        )}
