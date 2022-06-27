@@ -1,0 +1,66 @@
+{
+  "errors": [],
+  "warnings": [],
+  "hash": "e5e9ef1fd90a47bddeb2",
+  "publicPath": "",
+  "outputPath": "c:\\webb2\\gc2-frontity\\build\\static",
+  "assetsByChunkName": {
+    "gc2-frontity": "gc2-frontity.module.js"
+  },
+  "assets": [
+    {
+      "name": "fonts/Roboto-Bold.ttf",
+      "size": 167336,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/grafikcentralen/src/components/fonts/Roboto-Bold.ttf"
+      },
+      "emitted": false
+    },
+    {
+      "name": "fonts/Roboto-Medium.ttf",
+      "size": 168644,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/grafikcentralen/src/components/fonts/Roboto-Medium.ttf"
+      },
+      "emitted": false
+    },
+    {
+      "name": "gc2-frontity.module.js",
+      "size": 7883068,
+      "chunks": [
+        "gc2-frontity"
+      ],
+      "chunkNames": [
+        "gc2-frontity"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "namedChunkGroups": {
+    "gc2-frontity": {
+      "chunks": [
+        "gc2-frontity"
+      ],
+      "assets": [
+        "gc2-frontity.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "generator": "loadable-components",
+  "chunks": [
+    {
+      "id": "gc2-frontity",
+      "files": [
+        "gc2-frontity.module.js"
+      ]
+    }
+  ]
+}

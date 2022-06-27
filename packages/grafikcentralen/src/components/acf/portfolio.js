@@ -2,76 +2,64 @@ import connect from "@frontity/connect"
 import {styled} from "frontity"
 import {useState} from "react"
 import Link from "@frontity/components/link";
+import TrackVisibility from 'react-on-screen';
 
-
-const Portfolio = ({libraries, data}) => {
+const Portfolio = ({libraries, data, isVisible}) => {
 
 const Wrapper = styled.div`
-
-    display: grid ;
-    grid-template-columns: 1fr 1fr ;
+    display: flex ;
+    margin: 1rem 0;
     width: 100% ;
- 
+&:nth-child(2){
+    flex-direction: row-reverse ;
+}
 `
 
-const SlideImage = styled.div`
-    background: url('${props => props.img}');
-    height: 100vh  ;
-    width: 50vw ;
-    min-height: 100vh ;
-    background-repeat: no-repeat ;
-    background-size: cover ;
-    background-attachment: fixed ;
-    background-position:  center ;
-    
-    @media(max-width: 1000px){
-        background-position: calc(100% + 20vw ) ;
-    }
-    @media(max-width: 1500px){
-        background-position: calc(100% + 3vw ) ;
-    }
-    @media(max-width: 1265px){
-        background-position: calc(100% + 8vw ) ;
-    }
-    @media(max-width: 1160px){
-        background-position: calc(100% + 11vw ) ;
-    }
-    
-
+const SlideImage = styled.img`
+    transition: .4s ;
 `
 
 const Left = styled.div`
    display: flex ;
+   flex-flow: column ;
     justify-content: center ;
     align-items: center ;
-   height: 100vh  ;
     width: 50vw ;
     overflow: hidden ;
-    min-height: 100vh ;`
+    p {
+        max-width: 30ch;
+    }
+
+`
 
 const Right = styled.div`
- 
-    height: 100vh  ;
+
     width: 50vw ;
-    min-height: 100vh ;`
+    `
 
     return (
         <Wrapper>
-        
       
-        <Left>
-            {data.rubrik}
-            {data.text}
-        
-            {data.click_title}
-            {data.click_href}
-            {data.taggar.map((x)=>{
-                {x.tagg}
-            })}
-        </Left>
-        <Right> 
-        <SlideImage img={data.bild_image_data} />
-        </Right>
+  
+            <Left>
+           
+                <h2>{data.rubrik}</h2>
+                <p>{data.text}</p>
+                <button>
+                    <a href={data.click_href}>
+                        {data.click_title}
+                    </a>
+                </button>
+                <div>
+                {data.taggar.map((x)=>{
+                    <div>{x.tagg}</div>
+                })}
+                </div>
+            </Left>
+            <Right> 
+            
+            <SlideImage  src={data.bild_image_data} />
+            </Right>
 
       
         </Wrapper>

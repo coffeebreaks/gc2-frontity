@@ -18,7 +18,6 @@ const Footer = ({libraries, state}) => {
     const menu = state.source.data[key].acf.menu
     const background = state.source.data[key].acf.background
 
-
     const Wrapper = styled.footer`
     background-color: black ;
     color: white;
